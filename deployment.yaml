@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utc-time-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: utc-time-app
+  template:
+    metadata:
+      labels:
+        app: utc-time-app
+    spec:
+      containers:
+      - name: utc-time-app
+        image: lakhan0309/utc-time-app:latest
+        ports:
+        - containerPort: 8080
